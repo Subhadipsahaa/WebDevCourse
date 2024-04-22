@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <font face="Arial, sans-serif">
+        <table border="1" bordercolor="C3D9FF" cellspacing="0" cellpadding="4">
+            <tr>
+                <th bgcolor="C3D9FF" width="10000vh" align="left" colspan="2">Individual registration</th>
+            </tr>
+            <td>
+                <table cellpadding="5">
+                    <tr>
+                        <td align="left">
+                            <font color="red">*mandatory.</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="C3D9FF" colspan="2" align="left">GARBAGE/JUNK VALUES
+                            IN
+                            PROFILE MAY LEAD TO DEACTIVATION
+                            <br>
+                            Please use a valid E-mail ID and mobile number in registration.
+                        </td>
+                    </tr>
+                    <td align="left">
+                        USER ID<font color="red">*</font>
+                    </td>
+                    <td align="left">
+                        <input type="text" name="uid" placeholder="Choose User Id" minlength="3" maxlength="10"
+                            pattern="[A-za-z0-9_]{3,10}"
+                            title="Between 3 to 10 charecter.Only letter number and underscore are allowed." required>
+                        <font color="blue"><a href="">Check Availability</a>
+                        </font>
+                        <br>
+                        Between 3 to 10 charecter.Only letter number and underscore are allowed.
+                    </td>
+                    <tr>
+                        <td align="left">
+                            Password<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="password" name="password" placeholder="Enter Password" minlength="8"
+                                maxlength="15" pattern="[a-zA-Z0-9_\-!@#$%^&()+=?.,;:]]{8,15}"
+                                title="Min 8 charecter & Max 15 charecter.Password must contain at least one small & one capital alplabet and numeric digit."
+                                required>
+                            <br>
+                            Min 8 charecter & Max 15 charecter.Password must contain at least one small &
+                            one capital alplabet and numeric digit.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">Confirm Password<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="password" name="cpassword" placeholder="Confirm Password" minlength="8"
+                                maxlength="15" pattern="[a-zA-Z0-9_\-!@#$%^&()+=?.,;:]]{8,15}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" colspan="2">
+                            <font color="blue">If you forget your password,we will identify you with this information
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">Security Question<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <select name="securityQuestion" required>
+                                <option value="What is your pet name?">What is your pet name</option>
+                                <option value="What is your school name?">What is your school name</option>
+                                <option value="What is your favourite food?">What is your favourite food?</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Security Answer<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="password" name="securityAnswer" placeholder="Answer your Question" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Preferred Language<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <select required>
+                                <option value="English">English</option>
+                                <option value="Bengali">Bengali</option>
+                                <option value="Hindi">Hindi</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="C3D9FF"" width=" 10000vh" align="left" colspan="2" align="left">
+                            Personal Details
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            First Name<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="text" name="fname" placeholder="Enter First Name" pattern="[A-Za-z]]{0,25}"
+                                required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Middile Name
+                        </td>
+                        <td align="left">
+                            <input type="text" name="mname" placeholder="Enter Middle Name" pattern="[A-Za-z ]]{0,40}">
+                            (Optional)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Last Name<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="text" name="lname" placeholder="Enter Last Name" pattern="[A-Za-z]]{0,25}"
+                                required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label for="Gender">Gender<font color="red">*</font></label>
+                        </td>
+                        <td align="left">
+                            <input type="radio" name="Gender" value="Male" checked>Male
+                            <input type="radio" name="Gender" value="Female">Female
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label for="maritalStatus">Marital Status<font color="red">*</font></label>
+                        </td>
+                        <td align="left">
+                            <input type="radio" name="maritalStatus" value="Married">Married
+                            <input type="radio" name="maritalStatus" value="Unmarried" checked>Unmarried
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Date Of Birth<font color="red">*</font>
+                        </td>
+                        <td align="left">
+
+                            <select name="day" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+
+                            <select name="month" required>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+
+                            <select name="year" required>
+                                <option value="1999">1999</option>
+                                <option value="2000">2000</option>
+                                <option value="2001">2001</option>
+                                <option value="2002">2002</option>
+                                <option value="2003">2003</option>
+                                <option value="2004">2004</option>
+                                <option value="2005">2005</option>
+                                <option value="2006">2006</option>
+                                <option value="2007">2007</option>
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
+                                <option value="2032">2032</option>
+                                <option value="2033">2033</option>
+                                <option value="2034">2034</option>
+                                <option value="2035">2035</option>
+                                <option value="2036">2036</option>
+                                <option value="2037">2037</option>
+                                <option value="2038">2038</option>
+                                <option value="2039">2039</option>
+                                <option value="2040">2040</option>
+                                <option value="2041">2041</option>
+                                <option value="2042">2042</option>
+                                <option value="2043">2043</option>
+                                <option value="2044">2044</option>
+                                <option value="2045">2045</option>
+                                <option value="2046">2046</option>
+                                <option value="2047">2047</option>
+                                <option value="2048">2048</option>
+                                <option value="2049">2049</option>
+                                <option value="2050">2050</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Occupation<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <select name="occupation" required>
+                                <option value="engineer">Engineer</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="doctor">Doctor</option>
+                                <option value="farmer">farmer</option>
+                                <option value="software_developer">Software Developer</option>
+                                <option value="student">Student</option>
+                                <option value="accountant">Accountant</option>
+                                <option value="lawyer">Lawyer</option>
+                                <option value="electrician">Electrician</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Aaddhar Card No
+                        </td>
+                        <td align="left">
+                            <input type="text" name="aaddhar" maxlength="12" pattern="[0-9]{12}"
+                                title="Aaddhar card number should be 12 digits" placeholder="Enter Aaddhar Number">
+                            (Optional)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Pan Card
+                        </td>
+                        <td align="left">
+                            <input type="text" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]"
+                                title="PAN card number should be in the format: ABCDE1234F"
+                                placeholder="Enter Aaddhar Number">
+                            (Optional)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            E-mail<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="email" placeholder="Enter Your E-mail Id"
+                                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                title="Please enter a valid email address" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Mobile<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            +91 <input type="tel" minlength="10" maxlength="10" placeholder="Enter Phone Number"
+                                pattern="[0-9]{10}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Nationality<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <select name="nationality" required>
+                                <option value="India">India</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <td bgcolor="C3D9FF"" width=" 10000vh" align="left" colspan="2" align="left">
+                        Residential Address
+                    </td>
+                    <tr>
+                        <td align="left">
+                            Flat/Door/Block No<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="text" placeholder="Enter Flat/Door/Block No" minlength="5" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Street/Line
+                        </td>
+                        <td align="left">
+                            <input type="text" placeholder="Enter Street/Line">(Optional)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Area/Locality <font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="text" placeholder="Enter Area/Locality">(Optional)`
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Country<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <select name="ountry" required>
+                                <option value="India">India</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Pin Code<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="tel" minlength="6" maxlength="6" pattern="[0-9]{6}"
+                                placeholder="Enter Pin Code" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            State<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <select name="state">
+                                <option value="West Bengal">West Bengal</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            City/Town<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <select name="city" required>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Howrah">Howrah</option>
+                                <option value="Durgapur">Durgapur</option>
+                                <option value="Siliguri">Siliguri</option>
+                                <option value="Asansol">Asansol</option>
+                                <option value="Darjeeling">Darjeeling</option>
+                                <option value="Malda">Malda</option>
+                                <option value="Kharagpur">Kharagpur</option>
+                                <option value="Bardhaman">Bardhaman</option>
+                                <option value="Haldia">Haldia</option>
+                                <option value="Raiganj">Raiganj</option>
+                                <option value="Baharampur">Baharampur</option>
+                                <option value="Jalpaiguri">Jalpaiguri</option>
+                                <option value="Balurghat">Balurghat</option>
+                                <option value="Murshidabad">Murshidabad</option>
+                                <option value="Bankura">Bankura</option>
+                                <option value="Purulia">Purulia</option>
+                                <option value="Cooch Behar">Cooch Behar</option>
+                                <option value="Midnapore">Midnapore</option>
+                                <option value="Medinipur">Medinipur</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Post Office<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <select name="post_office" required>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Howrah">Howrah</option>
+                                <option value="Siliguri">Siliguri</option>
+                                <option value="Asansol">Asansol</option>
+                                <option value="Durgapur">Durgapur</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Phone<font color="red">*</font>
+                        </td>
+                        <td align="left">
+                            <input type="tel" minlength="10" maxlength="10" pattern="[0-9]{10}"
+                                placeholder="Enter Contact Number" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <font color="blue">Copy Residence to office Address
+                            </font>
+                        </td>
+                        <td align="left">
+                            <input type="radio" name="cretoo" value="yes" checked>Yes
+                            <input type="radio" name="cretoo" value="No">No
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </table>
+    </font>
+</body>
+
+</html>
