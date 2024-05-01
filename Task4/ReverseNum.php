@@ -15,7 +15,7 @@
 <body>
     <div class="container mt-5">
         <div class="col-6">
-        <form class="frm" method="get">
+        <form class="frm" method="post">
             <div class="from-group">
             <label for="name">Enter The Number :</label>
             <input type="text" name="name" id="name" class="form-control">
@@ -25,18 +25,17 @@
             <br>
             <br>
             <?php
-            if(isset($_GET['ok'])){
-                $n=$_GET['name'];
-                $num= (int)$n;
-                $rev=1;
+            if(isset($_POST['name'])){
+                $num=$_POST['name'];
                 $rem=0;
+                $rev=null;
                 while ($num>0) {
+                    
                     $rem=$num % 10;
                     $rev=$rev*10+$rem;
-                    $num=$num/10;
-                    echo "The reverse number is :".$rev;
+                    $num=(int)($num/10);
                 }
-                
+                echo "The reverse number is :".$rev;
             }
             ?>
         </form>
