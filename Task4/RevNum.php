@@ -17,15 +17,16 @@
         <div class="col-6">
             <form class="frm" method="get">
                 <div class="from-group">
+                    <h1>Reverse A Number</h1>
                     <label for="num">Enter The Number :</label>
                     <input type="text" name="num" id="num" class="form-control">
                 </div>
                 <br>
-                <input type="submit" name="ok" class="btn btn-primary" value="Submit">
+                <input type="submit" name="ok" class="btn btn-primary" value="Submit/Reset">
                 <br>
                 <br>
                 <?php
-                if (isset($_GET['ok'])) {
+                if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     if (isset($_GET['num'])) {
                         if (is_numeric($_GET['num'])) {
                             $num = $_GET['num'];
