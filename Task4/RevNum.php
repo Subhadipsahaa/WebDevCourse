@@ -15,30 +15,32 @@
 <body>
     <div class="container mt-5">
         <div class="col-6">
-        <form class="frm" method="post">
-            <div class="from-group">
-            <label for="name">Enter The Number :</label>
-            <input type="text" name="name" id="name" class="form-control">
-            </div>
-            <br>
-            <input type="submit" name="ok"  class="btn btn-primary" value="Submit">
-            <br>
-            <br>
-            <?php
-            if(isset($_POST['name'])){
-                $num=$_POST['name'];
-                $rem=0;
-                $rev=null;
-                while ($num>0) {
-                    
-                    $rem=$num % 10;
-                    $rev=$rev*10+$rem;
-                    $num=(int)($num/10);
+            <form class="frm" method="get">
+                <div class="from-group">
+                    <label for="name">Enter The Number :</label>
+                    <input type="text" name="name" id="name" class="form-control">
+                </div>
+                <br>
+                <input type="submit" name="ok" class="btn btn-primary" value="Submit/Reset">
+                <br>
+                <br>
+                <?php
+                if (isset($_GET['ok'])) {
+                    $num = $_GET['name'];
+                    if (is_numeric($num)) {
+                        $rem = 0;
+                        $rev = null;
+                        while ($num > 0) {
+
+                            $rem = $num % 10;
+                            $rev = $rev * 10 + $rem;
+                            $num = (int)($num / 10);
+                        }
+                        echo "The reverse number is :" . $rev;
+                    }
                 }
-                echo "The reverse number is :".$rev;
-            }
-            ?>
-        </form>
+                ?>
+            </form>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
