@@ -17,29 +17,25 @@
         <div class="col-6">
             <form class="frm" method="get">
                 <div class="from-group">
-                    <label for="num">Enter The Number :</label>
-                    <input type="text" name="num" id="num" class="form-control">
+                    <label for="num1">Enter First Number :</label>
+                    <input type="text" name="num1" id="num1" class="form-control">
+                    <label for="num2">Enter Second Number :</label>
+                    <input type="text" name="num2" id="num2" class="form-control">
                 </div>
                 <br>
-                <input type="submit" name="ok" class="btn btn-primary" value="Submit">
+                <input type="submit" name="ok" class="btn btn-primary" value="Submit/Reset">
                 <br>
                 <br>
                 <?php
                 if (isset($_GET['ok'])) {
-                    if (isset($_GET['num'])) {
-                        if (is_numeric($_GET['num'])) {
-                            $num = $_GET['num'];
-                            $rem = 0;
-                            $rev = null;
-                            echo "The number is :".$num."<br>";
-                            while ($num > 0) {
-                                $rem = $num % 10;
-                                $rev = $rev * 10 + $rem;
-                                $num = (int)($num / 10);
-                            }
-                            echo "The reverse number is :" . $rev;
+                    if (isset($_GET['num1']) && isset($_GET['num2'])) {
+                        if (is_numeric($_GET['num1']) && is_numeric($_GET['num2'])) {
+                            $num1 = $_GET['num1'];
+                            $num2 = $_GET['num2'];
+                            $sum = $num1 + $num2;
+                            echo "The sum of two numbers is :". $sum;
                         } else
-                            echo "Enter a valid numeric data";
+                            echo "Enter a Valid Numeric data";
                     }
                 }
                 ?>
