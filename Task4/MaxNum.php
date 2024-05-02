@@ -26,7 +26,7 @@
                 <br>
                 <br>
                 <?php
-                if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                if (isset($_GET['ok'])) {
                     if ($_GET['num'] != null) {
                         if (isset($_GET['num'])) {
                             $input = $_GET['num'];
@@ -58,15 +58,20 @@
                                         }
                                     }
                                     echo "<pre>";
-                                    print_r($num);
+                                    echo "The List You Given :";
+                                    for ($i = 0; $i < $length; $i++) {
+                                        $trav = $num[$i];
+                                        echo " " . $trav;
+                                    }
+                                    // print_r($num);
                                     echo "</pre>";
-                                    echo $max;
+                                    echo "The Maximum number is :" . $max;
                                     echo "<br>";
-                                    echo $min;
+                                    echo "The Minimum number is :" . $min;
                                 } else
-                                    echo "Enter a valid numeric data";
+                                    echo "Enter a valid numeric data.";
                             } else
-                                echo "Enter a valid numeric data";
+                                echo "Enter a valid numeric data.";
                         }
                     }
                 }

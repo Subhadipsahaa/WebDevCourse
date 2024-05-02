@@ -17,7 +17,7 @@
         <div class="col-6">
             <form class="frm" method="get">
                 <div class="from-group">
-                    <h1>Reverse A Number</h1>
+                    <h1>Check The Number Is Prime Or Not</h1>
                     <label for="num">Enter The Number :</label>
                     <input type="text" name="num" id="num" class="form-control">
                 </div>
@@ -31,15 +31,21 @@
                         if (isset($_GET['num'])) {
                             if (is_numeric($_GET['num'])) {
                                 $num = $_GET['num'];
-                                $rem = 0;
-                                $rev = null;
-                                echo "The number is :" . $num . "<br>";
-                                while ($num > 0) {
-                                    $rem = $num % 10;
-                                    $rev = $rev * 10 + $rem;
-                                    $num = (int)($num / 10);
+                                function primeChecker($num)
+                                {
+                                    for ($i = 2; $i < $num / 2; $i++) {
+
+                                        if ($num % $i == 0) {
+                                            return 0;
+                                            break;
+                                        }
+                                    }
+                                    return 1;
                                 }
-                                echo "The reverse number is :" . $rev;
+                                if (primeChecker($num)) {
+                                    echo "The number is Prime.";
+                                } else
+                                    echo "The number is not Prime.";
                             } else
                                 echo "Enter a valid numeric data.";
                         }
