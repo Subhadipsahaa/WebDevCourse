@@ -27,36 +27,49 @@
                 <br>
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                    if ($_GET['num'] != null){
-                    if (isset($_GET['num'])) {
-                        $input = $_GET['num'];
-                        $num = explode(' ', $input);
-                        if (is_array($num)) {
-                            $length = count($num);
-                            $max = $num[0];
-                            $min = $num[0];
-                                for ($i = 1; $i < $length; $i++) {
-                                    if ($max < $num[$i]) {
-                                        $max = $num[$i];
+                    if ($_GET['num'] != null) {
+                        if (isset($_GET['num'])) {
+                            $input = $_GET['num'];
+                            $num = explode(' ', $input);
+                            if (is_array($num)) {
+                                $length = count($num);
+                                $max = $num[0];
+                                $min = $num[0];
+                                function isnumeric($num, $length)
+                                {
+                                    for ($i = 0; $i < $length; $i++) {
+                                        $check = $num[$i];
+                                        if (!is_numeric($check)) {
+                                            return 0;
+                                            break;
+                                        }
                                     }
+                                    return 1;
                                 }
-                                for ($i = 1; $i < $length; $i++) {
-                                    if ($min > $num[$i]) {
-                                        $min = $num[$i];
+                                if (isnumeric($num, $length)) {
+                                    for ($i = 1; $i < $length; $i++) {
+                                        if ($max < $num[$i]) {
+                                            $max = $num[$i];
+                                        }
                                     }
-                                }
-                                echo "<pre>";
-                                print_r($num);
-                                echo "</pre>";
-                                echo $max;
-                                echo "<br>";
-                                echo $min;
-                        } else
-                            echo "Enter a valid numeric data";
+                                    for ($i = 1; $i < $length; $i++) {
+                                        if ($min > $num[$i]) {
+                                            $min = $num[$i];
+                                        }
+                                    }
+                                    echo "<pre>";
+                                    print_r($num);
+                                    echo "</pre>";
+                                    echo $max;
+                                    echo "<br>";
+                                    echo $min;
+                                } else
+                                    echo "Enter a valid numeric data";
+                            } else
+                                echo "Enter a valid numeric data";
+                        }
                     }
-                    
                 }
-            }
                 ?>
             </form>
         </div>
