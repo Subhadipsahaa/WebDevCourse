@@ -23,7 +23,7 @@
                     <input type="text" name="num2" id="num2" class="form-control">
                 </div>
                 <br>
-                <input type="submit" name="ok" class="btn btn-primary" value="Submit/Reset">
+                <input type="submit" name="ok" class="btn btn-primary" value="Calculate/Reset">
                 <br>
                 <br>
                 <?php
