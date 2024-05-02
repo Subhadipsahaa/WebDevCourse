@@ -63,11 +63,10 @@
                                         $trav = $num[$i];
                                         echo " " . $trav;
                                     }
-                                    // print_r($num);
                                     echo "</pre>";
-                                    echo "The Maximum number is :" . $max;
+                                    echo "The Maximum number is : " . $max;
                                     echo "<br>";
-                                    echo "The Minimum number is :" . $min;
+                                    echo "The Minimum number is : " . $min;
                                 } else
                                     echo "Enter a valid numeric data.";
                             } else
