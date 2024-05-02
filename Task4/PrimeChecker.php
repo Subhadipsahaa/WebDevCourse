@@ -42,9 +42,13 @@
                                     }
                                     return 1;
                                 }
-                                if (primeChecker($num)) {
+                                if ($num == 1) {
+                                    echo "The number is not Prime.";
+                                }elseif ($num == 0) {
+                                    echo "The number is not Prime.";
+                                }elseif (primeChecker($num)) {
                                     echo "The number is Prime.";
-                                } else
+                                }elseif(!primeChecker($num))
                                     echo "The number is not Prime.";
                             } else
                                 echo "Enter a valid numeric data.";
