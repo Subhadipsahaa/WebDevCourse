@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Title</title>
 </head>
+
 <body>
     <div class="container mt-5">
         <div class="col-6">
             <form class="frm" method="get">
                 <div class="from-group">
-                    <h1>Reverse A Number</h1>
-                    <label for="num">Enter The Number :</label>
+                    <h1>Maximum And Minimum</h1>
+                    <label for="num">Enter Numbers :</label>
                     <input type="text" name="num" id="num" class="form-control">
                 </div>
                 <br>
@@ -28,22 +29,34 @@
                 if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     if ($_GET['num'] != null){
                     if (isset($_GET['num'])) {
-                        if (is_numeric($_GET['num'])) {
-                            $num = $_GET['num'];
-                            $rem = 0;
-                            $rev = null;
-                            echo "The number is :".$num."<br>";
-                            while ($num > 0) {
-                                $rem = $num % 10;
-                                $rev = $rev * 10 + $rem;
-                                $num = (int)($num / 10);
-                            }
-                            echo "The reverse number is :" . $rev;
+                        $input = $_GET['num'];
+                        $num = explode(' ', $input);
+                        if (is_array($num)) {
+                            $length = count($num);
+                            $max = $num[0];
+                            $min = $num[0];
+                                for ($i = 1; $i < $length; $i++) {
+                                    if ($max < $num[$i]) {
+                                        $max = $num[$i];
+                                    }
+                                }
+                                for ($i = 1; $i < $length; $i++) {
+                                    if ($min > $num[$i]) {
+                                        $min = $num[$i];
+                                    }
+                                }
+                                echo "<pre>";
+                                print_r($num);
+                                echo "</pre>";
+                                echo $max;
+                                echo "<br>";
+                                echo $min;
                         } else
                             echo "Enter a valid numeric data";
                     }
+                    
                 }
-                }
+            }
                 ?>
             </form>
         </div>

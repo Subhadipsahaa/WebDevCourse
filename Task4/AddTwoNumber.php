@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Title</title>
 </head>
-
 <body>
     <div class="container mt-5">
         <div class="col-6">
@@ -29,6 +28,7 @@
                 <br>
                 <?php
                 if (isset($_GET['ok'])) {
+                    if ($_GET['num1'] != null && $_GET['num2'] != null){
                     if (isset($_GET['num1']) && isset($_GET['num2'])) {
                         if (is_numeric($_GET['num1']) && is_numeric($_GET['num2'])) {
                             $num1 = $_GET['num1'];
@@ -38,6 +38,7 @@
                         } else
                             echo "Enter a Valid Numeric data";
                     }
+                }
                 }
                 ?>
             </form>
