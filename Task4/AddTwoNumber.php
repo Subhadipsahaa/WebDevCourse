@@ -14,7 +14,7 @@
 <body>
     <div class="container mt-5">
         <div class="col-6">
-            <form class="frm" method="get">
+            <form class="frm" method="post">
                 <div class="from-group">
                     <h1>Addition Of Two Numbers</h1>
                     <label for="num1">Enter First Number :</label>
@@ -27,14 +27,14 @@
                 <br>
                 <br>
                 <?php
-                if (isset($_GET['ok'])) {
-                    if ($_GET['num1'] != null && $_GET['num2'] != null){
-                    if (isset($_GET['num1']) && isset($_GET['num2'])) {
-                        if (is_numeric($_GET['num1']) && is_numeric($_GET['num2'])) {
-                            $num1 = $_GET['num1'];
-                            $num2 = $_GET['num2'];
+                if (isset($_POST['ok'])) {
+                    if ($_POST['num1'] != null && $_POST['num2'] != null){
+                    if (isset($_POST['num1']) && isset($_POST['num2'])) {
+                        if (is_numeric($_POST['num1']) && is_numeric($_POST['num2'])) {
+                            $num1 = $_POST['num1'];
+                            $num2 = $_POST['num2'];
                             $sum = $num1 + $num2;
-                            echo "The sum of $num1 and $num2 is :-" . $sum .".";
+                            echo "The sum of $num1 and $num2 is :" . $sum .".";
                         } else
                             echo "Enter a Valid Numeric data.";
                     }

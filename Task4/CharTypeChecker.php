@@ -17,7 +17,7 @@
         <div class="col-6">
             <form class="frm" method="get">
                 <div class="from-group">
-                    <h1>Maximum And Minimum</h1>
+                    <h1>Numeric, Alphabets and Special charecters Checker</h1>
                     <label for="num">Enter Numbers :</label>
                     <input type="text" name="num" id="num" class="form-control">
                 </div>
