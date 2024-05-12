@@ -15,22 +15,33 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Register</title>
+    <title>Title</title>
 </head>
 
 <body>
     <div class="container mt-5">
         <?php
-        if (isset($_SESSION) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_SESSION)) {
         ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Hey Buddy!</strong><?php echo " Your Have Registered Succesfully"; ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Hey Buddy!</strong><?php echo " Your Have Registered Succesfully"; ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <?php
+                header("refresh:2;url=main.php");
+            } else {
+            ?>
+                <div class="alert alert-denger alert-dismissible fade show" role="alert">
+                    <strong>Sorry!</strong><?php echo " Your Have Registered Unsuccesfully"; ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
         <?php
-            header("refresh:2;url=main.php");
+            }
         }
         ?>
         <div class="col-6 border pt-5 pb-5 pl-5 pr-5 mx-auto rounded-lg mb-5" style="width: 40%;">
@@ -65,10 +76,14 @@ session_start();
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" name="lang[]" id="lang" value="C">
                             C
-                            <br>
+                        </label>
+                        <br>
+                        <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" name="lang[]" id="lang" value="C++">
                             C++
-                            <br>
+                        </label>
+                        <br>
+                        <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" name="lang[]" id="lang" value="PHP">
                             PHP
                         </label>
@@ -110,6 +125,7 @@ session_start();
                     $lang = implode(",", $temp);
                     $sql = "INSERT INTO `user` (`name`, `email`, `password`, `dob`, `gender`, `language`, `address`, `city`) VALUES ('$uname', '$email_id', '$pwd', '$dob', '$gender', '$lang', '$address', '$city')";
                     $ress = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    $ress = 0;
                     if ($ress == 1) {
                         $_SESSION = 1;
                         $res = "successfull";
