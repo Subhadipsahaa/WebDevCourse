@@ -34,7 +34,7 @@ session_start();
                 header("refresh:2;url=main.php");
             } else {
             ?>
-                <div class="alert alert-denger alert-dismissible fade show" role="alert">
+                <div class="alert alert- alert-dismissible fade show" role="alert">
                     <strong>Sorry!</strong><?php echo " Your Have Registered Unsuccesfully"; ?>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
