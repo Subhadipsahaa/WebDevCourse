@@ -16,59 +16,59 @@ require 'dbcon.php';
 </head>
 
 <body>
-<?php
-require 'nav.php';
-?>
-    <div class="container mt-5 pl-pr-0 mx-auto " >
+    <?php
+    require 'nav.php';
+    ?>
+    <div class="container mt-5 pl-pr-0 mx-auto ">
         <?php
         $src = "SELECT * FROM user";
         $rs = mysqli_query($conn, $src) or die(mysqli_error($conn));
+        if (mysqli_num_rows($rs) > 0) {
         ?>
-        <table class="table table-bordered table-striped ";>
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">User Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Date Of Birth</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">language</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">City</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if (mysqli_num_rows($rs) > 0) {
+            <table class="table table-bordered table-striped " ;>
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">User Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Date Of Birth</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">language</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
                     while ($rec = mysqli_fetch_assoc($rs)) {
                         $dob = strtotime($rec['dob']);
                         $dob = date("d-M-Y", $dob);
 
-                ?>
+                    ?>
                         <tr>
-                            <td><?php echo $rec['uid']; ?></td>
-                            <td><?php echo $rec['name']; ?></td>
-                            <td ><?php echo $rec['email']; ?></td>
-                            <td class="text-break"><?php echo $rec['password']; ?></td>
-                            <td class="text-nowrap"><?php echo $dob; ?></td>
+                            <td><?php echo $rec['uid'] ?></td>
+                            <td><?php echo $rec['name'] ?></td>
+                            <td><?php echo $rec['email'] ?></td>
+                            <td class="text-break"><?php echo $rec['password'] ?></td>
+                            <td class="text-nowrap"><?php echo $dob ?></td>
                             <td><?php echo $rec['gender'] ?></td>
-                            <td><?php echo $rec['language']; ?></td>
+                            <td><?php echo $rec['language'] ?></td>
                             <td><?php echo $rec['address'] ?></td>
                             <td><?php echo $rec['city'] ?></td>
                         </tr>
-            </tbody>
-        </table>
-    <?php
+                    <?php
                     }
                 } else {
-    ?>
-    <tr>
-        <td colspan="9" class="text-center">No record found</td>
-    </tr>
-<?php
+                    ?>
+                    <tr>
+                        <td colspan="9" class="text-center">No record found</td>
+                    </tr>
+                <?php
                 }
-?>
+                ?>
+                </tbody>
+            </table>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
