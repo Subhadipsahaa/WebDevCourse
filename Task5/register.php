@@ -46,7 +46,9 @@ session_start();
         ?>
         <div class="col-6 border pt-5 pb-5 pl-5 pr-5 mx-auto rounded-lg mb-5" style="width: 40%;">
             <form class="frm" method="post">
-                <h2 class="text-center text-primary">User Registration</h2>
+
+                <div class="p-3 mb-2 bg-dark text-center rounded-lg text-white"><h2 >User Registration</h2></div>
+
                 <br>
                 <div class="form-group">
                     <label for="uname">Enter Name</label>
@@ -104,12 +106,12 @@ session_start();
                 </div>
                 <br>
                 <div class="text-center">
-                    <input type="submit" name="ok" class="btn btn-primary " value="Sign Up">
+                    <input type="submit" name="ok" class="btn btn-dark btn-lg " value="Sign Up">
                 </div>
                 <br>
-                <div class="text-center">
-                    <input type="reset" name="ok" class="btn btn-primary " value="Reset">
-                </div>
+                <!-- <div class="text-center">
+                    <input type="reset" name="ok" class="btn btn-dark btn-lg" value="Reset">
+                </div> -->
             </form>
             <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
